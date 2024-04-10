@@ -57,7 +57,7 @@ class Counter extends Component {
       <div>
         <div className="row">
         <h1>Hello</h1>
-        <h1>Company name is: {this.state.count}</h1>
+        <h1>Counter is: {this.state.count}</h1>
         <button className="btn btn-primary" onClick={this.increment}>Increment</button>
         <button className="btn btn-primary" onClick={this.decrement}>Decrement</button>
       </div>
