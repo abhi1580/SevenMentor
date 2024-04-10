@@ -10,7 +10,8 @@ export default class ColorChange extends Component {
   render() {
     return (
       <div style={{ backgroundColor: this.state.color }}>
-        <input type="text" onChange={(event)=>{this.setState({color:event.target.value})}} />
+        <h3>Enter color name below:</h3>
+        <input type="text" className="form" placeholder="Enter any color here" onChange={(event)=>{this.setState({color:event.target.value})}} />
       </div>
     );
   }
