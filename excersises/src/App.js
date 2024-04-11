@@ -7,6 +7,9 @@ import EmpUsingProp from "./Lab/EmpUsingProp";
 import ColorChange from "./Lab/ColorChange";
 import EventHandling from "./Components/EventHandling3";
 import EventHandling4 from "./Components/EventHandling4";
+import ListDemo from "./Components/ListDemo";
+import FruitList from "./Components/FruitList";
+import CounterUsingUseState from "./Components/CounterUsingUseState";
 
 function App() {
   return (
@@ -22,9 +25,12 @@ function App() {
           Email="abhayrpanchal@gmail.com"
           Mobile="9146XXXXXX"
         /><hr/>
+        <ListDemo/>
+        <FruitList/>
         <EventHandling/><hr/>
         <EventHandling4/><hr/>
         <ColorChange /><hr/>
+        <CounterUsingUseState/>
       </div>
     </div>
   );
