@@ -11,6 +11,7 @@ import ListDemo from "./Components/ListDemo";
 import FruitList from "./Components/FruitList";
 import CounterUsingUseState from "./Components/CounterUsingUseState";
 import ColorChangeUsingUseState from "./Lab/ColorChangeUsingUseState";
+import ColorChange2 from "./Components/ColorChange2";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
         <EventHandling4/><hr/>
         <ColorChange /><hr/>
         <CounterUsingUseState/><hr/>
-        <ColorChangeUsingUseState/>
+        <ColorChangeUsingUseState/><hr/>
+        <ColorChange2/><hr/>
       </div>
     </div>
   );
