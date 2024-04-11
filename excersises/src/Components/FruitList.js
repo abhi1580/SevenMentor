@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import Fruit from './fruit';
 export default function FruitList() {
     const fruits=[{

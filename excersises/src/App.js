@@ -10,6 +10,7 @@ import EventHandling4 from "./Components/EventHandling4";
 import ListDemo from "./Components/ListDemo";
 import FruitList from "./Components/FruitList";
 import CounterUsingUseState from "./Components/CounterUsingUseState";
+import ColorChangeUsingUseState from "./Lab/ColorChangeUsingUseState";
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
         <EventHandling/><hr/>
         <EventHandling4/><hr/>
         <ColorChange /><hr/>
-        <CounterUsingUseState/>
+        <CounterUsingUseState/><hr/>
+        <ColorChangeUsingUseState/>
       </div>
     </div>
   );
