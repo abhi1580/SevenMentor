@@ -12,12 +12,13 @@ import FruitList from "./Components/FruitList";
 import CounterUsingUseState from "./Components/CounterUsingUseState";
 import ColorChangeUsingUseState from "./Lab/ColorChangeUsingUseState";
 import ColorChange2 from "./Components/ColorChange2";
+import FunctionalComponent from "./Components/FunctionalComponent";
 
 function App() {
   return (
     <div className="App container">
       <div className="container-fluid">
-        <Demo /><hr/>
+        {/* <Demo /><hr/>
         <StateDemo2 /><hr/>
         <MyCar /><hr/>
         <Counter /><hr/>
@@ -33,8 +34,10 @@ function App() {
         <EventHandling4/><hr/>
         <ColorChange /><hr/>
         <CounterUsingUseState/><hr/>
+        
+        <ColorChange2/><hr/> */}
+        {/* <FunctionalComponent id="1" name="John"/> */}
         <ColorChangeUsingUseState/><hr/>
-        <ColorChange2/><hr/>
       </div>
     </div>
   );
