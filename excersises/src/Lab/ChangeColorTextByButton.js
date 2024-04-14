@@ -5,7 +5,7 @@ const ChangeColorTextByButton = () => {
 
     return (
         <div>
-            <h1 style={{ color: displayColor }}>The text in heading will change according to the button you clicked!!</h1>
+            <h1 style={{ color: displayColor }}>You just clicked {displayColor} button!!</h1>
             <button style={{backgroundColor:"red"}} onClick={() => setDisplayColor("red")}>Red</button>
             <button style={{backgroundColor:"yellow"}} onClick={() => setDisplayColor("yellow")}>Yellow</button>
             <button style={{backgroundColor:"green"}} onClick={() => setDisplayColor("green")}>Green</button>

@@ -49,7 +49,8 @@ function App() {
         <FunctionalComponent id="1" name="John" />
         <ColorChangeUsingUseState />
         <hr />
-        <ChangeColorTextByButton/><hr/>
+        <ChangeColorTextByButton />
+        <hr />
       </div>
     </div>
   );
