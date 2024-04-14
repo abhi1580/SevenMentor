@@ -13,31 +13,43 @@ import CounterUsingUseState from "./Components/CounterUsingUseState";
 import ColorChangeUsingUseState from "./Lab/ColorChangeUsingUseState";
 import ColorChange2 from "./Components/ColorChange2";
 import FunctionalComponent from "./Components/FunctionalComponent";
+import ChangeColorTextByButton from "./Lab/ChangeColorTextByButton";
 
 function App() {
   return (
     <div className="App container">
       <div className="container-fluid">
-        {/* <Demo /><hr/>
-        <StateDemo2 /><hr/>
-        <MyCar /><hr/>
-        <Counter /><hr/>
+        <Demo />
+        <hr />
+        <StateDemo2 />
+        <hr />
+        <MyCar />
+        <hr />
+        <Counter />
+        <hr />
         <EmpUsingProp
           FirstName="Abhay"
           LastName="Panchal"
           Email="abhayrpanchal@gmail.com"
           Mobile="9146XXXXXX"
-        /><hr/>
-        <ListDemo/>
-        <FruitList/>
-        <EventHandling/><hr/>
-        <EventHandling4/><hr/>
-        <ColorChange /><hr/>
-        <CounterUsingUseState/><hr/>
-        
-        <ColorChange2/><hr/> */}
-        {/* <FunctionalComponent id="1" name="John"/> */}
-        <ColorChangeUsingUseState/><hr/>
+        />
+        <hr />
+        <ListDemo />
+        <FruitList />
+        <EventHandling />
+        <hr />
+        <EventHandling4 />
+        <hr />
+        <ColorChange />
+        <hr />
+        <CounterUsingUseState />
+        <hr />
+        <ColorChange2 />
+        <hr />
+        <FunctionalComponent id="1" name="John" />
+        <ColorChangeUsingUseState />
+        <hr />
+        <ChangeColorTextByButton/><hr/>
       </div>
     </div>
   );
