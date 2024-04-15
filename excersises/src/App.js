@@ -1,25 +1,29 @@
 import "./App.css";
-import Counter from "./Lab/Counter";
-import Demo from "./Components/Demo";
-import StateDemo2 from "./Components/StateDemo2";
-import MyCar from "./Components/StateDemo3";
-import EmpUsingProp from "./Lab/EmpUsingProp";
-import ColorChange from "./Lab/ColorChange";
-import EventHandling from "./Components/EventHandling3";
-import EventHandling4 from "./Components/EventHandling4";
-import ListDemo from "./Components/ListDemo";
-import FruitList from "./Components/FruitList";
-import CounterUsingUseState from "./Components/CounterUsingUseState";
-import ColorChangeUsingUseState from "./Lab/ColorChangeUsingUseState";
-import ColorChange2 from "./Components/ColorChange2";
-import FunctionalComponent from "./Components/FunctionalComponent";
-import ChangeColorTextByButton from "./Lab/ChangeColorTextByButton";
+// import Counter from "./Lab/Counter";
+// import Demo from "./Components/Demo";
+// import StateDemo2 from "./Components/StateDemo2";
+// import MyCar from "./Components/StateDemo3";
+// import EmpUsingProp from "./Lab/EmpUsingProp";
+// import ColorChange from "./Lab/ColorChange";
+// import EventHandling from "./Components/EventHandling3";
+// import EventHandling4 from "./Components/EventHandling4";
+// import ListDemo from "./Components/ListDemo";
+// import FruitList from "./Components/FruitList";
+// import CounterUsingUseState from "./Components/CounterUsingUseState";
+// import ColorChangeUsingUseState from "./Lab/ColorChangeUsingUseState";
+// import ColorChange2 from "./Components/ColorChange2";
+// import FunctionalComponent from "./Components/FunctionalComponent";
+// import ChangeColorTextByButton from "./Lab/ChangeColorTextByButton";
+// import ToggleTextUsingUseState from "./Lab/ToggleTextUsingUseState";
+// import UseStateForObj from "./Components/UseStateForObj";
+import UseEffectHookDemo1 from "./Components/Hooks/UseEffect/UseEffectHookDemo1";
+
 
 function App() {
   return (
     <div className="App container">
       <div className="container-fluid">
-        <Demo />
+        {/* <Demo />
         <hr />
         <StateDemo2 />
         <hr />
@@ -51,6 +55,9 @@ function App() {
         <hr />
         <ChangeColorTextByButton />
         <hr />
+        <ToggleTextUsingUseState/> */}
+        {/* <UseStateForObj/> */}
+        <UseEffectHookDemo1 temp={10}/>
       </div>
     </div>
   );
