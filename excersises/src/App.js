@@ -17,7 +17,8 @@ import "./App.css";
 // import ToggleTextUsingUseState from "./Lab/ToggleTextUsingUseState";
 // import UseStateForObj from "./Components/UseStateForObj";
 import UseEffectHookDemo1 from "./Components/Hooks/UseEffect/UseEffectHookDemo1";
-
+import CounterExample from "./Lab/Hooks/UseEffect/CounterExample";
+import AddEleToArray from "./Lab/Hooks/UseState/AddEleToArray";
 
 function App() {
   return (
@@ -57,7 +58,11 @@ function App() {
         <hr />
         <ToggleTextUsingUseState/> */}
         {/* <UseStateForObj/> */}
-        <UseEffectHookDemo1 temp={10}/>
+        <UseEffectHookDemo1 temp={10} />
+        <hr />
+        <AddEleToArray />
+        <hr/>
+        <CounterExample/>
       </div>
     </div>
   );
