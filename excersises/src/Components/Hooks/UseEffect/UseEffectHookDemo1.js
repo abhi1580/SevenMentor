@@ -29,7 +29,7 @@ const UseEffectHookDemo1 = (props) => {
       <h1>Value fetched from props : {props.temp}</h1>
       <h1>The count is set to {count}</h1>
       <button onClick={() => setCount(count + 1)}>
-        Click here for increment
+        Click here for increment..
       </button>
     </div>
   );
