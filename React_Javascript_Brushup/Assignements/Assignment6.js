@@ -11,13 +11,19 @@ let southStates = ["Andhra Pradesh", "Telangana"];
 let nsStates = [...northStates, ...southStates];
 
 //Iterate over the nsStates using for..of loop to display concatenated list of states
-// for(ele of nsStates){
-//     console.log(ele)
-// }
+console.log("Iteraration using for...of loop")
+for (ele of nsStates) {
+  console.log(ele);
+}
+console.log(
+  "**********************************************************************************************************************************************************"
+);
 //Clone the nsStates array
 let clonednsStates = [...nsStates];
 
 //Iterate over cloned array using traditional for loop to display all the elements
+console.log("Iteraration using traditional for loop")
+
 for (i = 0; i < clonednsStates.length; i++) {
   console.log(clonednsStates[i]);
 }

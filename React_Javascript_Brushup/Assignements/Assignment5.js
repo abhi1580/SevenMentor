@@ -16,11 +16,11 @@ class TouristPlace {
   }
   getInfo() {
     console.log(
-      `Hotel name : ${this.name} location : ${this.location} country : ${this.country} typeOfPlace : ${this.typeOfPlace} sightSeeingSpots : ${this.sightSeeingSpots}`
-    );
-    console.log(
       "**********************************************************************************************************************************************************"
     );
+    return `Hotel name : ${this.name} location : ${this.location} country : ${this.country} typeOfPlace : ${this.typeOfPlace} sightSeeingSpots : ${this.sightSeeingSpots}`;
+
+    
   }
 }
 
@@ -72,8 +72,8 @@ let tp5 = new TouristPlace("Maitai Bay", "Nelson", "New Zealand", "Beach", [
 ]);
 
 //Get all the details by calling getInfo method and print on console
-tp1.getInfo();
-tp2.getInfo();
-tp3.getInfo();
-tp4.getInfo();
-tp5.getInfo();
+console.log(tp1.getInfo())
+console.log(tp2.getInfo())
+console.log(tp3.getInfo())
+console.log(tp4.getInfo())
+console.log(tp5.getInfo())
