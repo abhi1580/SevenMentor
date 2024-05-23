@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function selectedAction(action) {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let result = 0;
+        switch (action) {
+          case "+":
+            result = `Addition is : ${num1 + num2}`;
+            break;
+          case "-":
+            result = `Subtraction is : ${num1 - num2}`;
+            break;
+          case "*":
+            result = `Multiplication is : ${num1 * num2}`;
+            break;
+          case "/":
+            if (num2 !== 0) result = `Division is : ${num1 / num2}`;
+            else result = "Division by 0 Exception!";
+            break;
+        }
+        document.getElementById("result").innerHTML = `${result}`;
+      }
+    </script>
+  </head>
+  <body>
+    <input
+      id="num1"
+      type="number"
+      placeholder="Enter first number"
+    /><br /><br />
+    <input id="num2" type="number" placeholder="Enter second number" /><br />
+    <h1 id="result"></h1>
+    <button id="addBtn" onclick="selectedAction('+')">Addition</button>
+    <button id="subBtn" onclick="selectedAction('-')">Subtraction</button>
+    <button id="mulBtn" onclick="selectedAction('*')">Multiplication</button>
+    <button id="divBtn" onclick="selectedAction('/')">Division</button>
+  </body>
+</html>
