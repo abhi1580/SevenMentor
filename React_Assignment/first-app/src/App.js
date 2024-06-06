@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AlertButton from "./components/AlertButton";
+import Flowers from "./components/Flowers";
+import Hello from "./components/Hello";
+import Person from "./components/Person";
 
 function App() {
+  // Parent component of Hello component
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Hello />
+      {/* User defined DOM - Child */}
+      <Flowers />
+
+      <Person name="Abhay Panchal" gender="Male" age={27} />
+      {/* Passing object as prop to person Component */}
+      {/* <Person values={{name:"Abhay Panchal",gender:"Male",age:27}}/> */}
+      <Person name="Hansraj Jadhav" gender="Male" age={27} />
+
+      <AlertButton/>
+
     </div>
   );
-}
+} // End of parent component App
 
 export default App;
