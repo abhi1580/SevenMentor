@@ -1,8 +1,10 @@
 import "./App.css";
-import AlertButton from "./components/AlertButton";
+// import AlertButton from "./components/AlertButton";
 import Flowers from "./components/Flowers";
 import Hello from "./components/Hello";
 import Person from "./components/Person";
+import SampleForm from "./components/SampleForm";
+import Toolbar from "./components/Toolbar";
 
 function App() {
   // Parent component of Hello component
@@ -17,7 +19,8 @@ function App() {
       {/* <Person values={{name:"Abhay Panchal",gender:"Male",age:27}}/> */}
       <Person name="Hansraj Jadhav" gender="Male" age={27} />
 
-      <AlertButton/>
+      <Toolbar/>
+      <SampleForm/>
 
     </div>
   );
