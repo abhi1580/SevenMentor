@@ -1,4 +1,8 @@
 import "./App.css";
+import CarTable from "./components/CarTable";
+import Count from "./components/Count";
+import CountState from "./components/CountState";
+import FlowerList from "./components/FlowerList";
 // import AlertButton from "./components/AlertButton";
 import Flowers from "./components/Flowers";
 import Hello from "./components/Hello";
@@ -21,6 +25,10 @@ function App() {
 
       <Toolbar/>
       <SampleForm/>
+      <FlowerList/>
+      <CarTable/>
+      <Count/>
+      <CountState/>
 
     </div>
   );
