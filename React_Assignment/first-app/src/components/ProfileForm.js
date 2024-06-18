@@ -41,11 +41,12 @@ const ProfileForm = () => {
     }
   };
   return (
-    <div className="container w-50 border border-primary round p-2 text-bg-secondary">
+    <div className="container mt-5 w-50 border border-primary round p-3 text-bg-secondary">
+      <h2 style={{textAlign:"center"}}>Profile Form</h2><hr/>
       {!isSubmitted && (
         <div>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="mb-3">
               <label htmlFor="fullname" className="form-label">
                 Full Name:
               </label>
@@ -57,7 +58,7 @@ const ProfileForm = () => {
                 required
               />
             </div>
-            <div>
+            <div className="mb-3">
               <label htmlFor="age" className="form-label">
                 Age:
               </label>
@@ -72,12 +73,13 @@ const ProfileForm = () => {
                 required
               />
             </div>
-            <div>
+            <div className="mb-3">
               <label htmlFor="gender" className="form-label">
                 Gender:
               </label>
               <div className="form-check">
                 <input
+                  required
                   className="form-check-input"
                   id="g1"
                   type="radio"
@@ -97,6 +99,7 @@ const ProfileForm = () => {
                   type="radio"
                   name="gender"
                   value="Female"
+                  required
                   onClick={() => {
                     profile.gender = "Female";
                   }}
@@ -115,7 +118,7 @@ const ProfileForm = () => {
                   checked={profile.hobbies.includes("singing")}
                   onChange={handleHobbiesChange}
                 />
-                <label className="form-label" htmlFor="hb1">
+                <label className="form-label m-2" htmlFor="hb1">
                   Singing
                 </label>
               </div>
@@ -129,8 +132,8 @@ const ProfileForm = () => {
                   checked={profile.hobbies.includes("dancing")}
                   onChange={handleHobbiesChange}
                 />
-                <label className="form-label" htmlFor="hb2">
-                  Singing
+                <label className="form-label m-2" htmlFor="hb2">
+                  Dancing
                 </label>
               </div>
               <div className="form-check">
@@ -143,12 +146,12 @@ const ProfileForm = () => {
                   checked={profile.hobbies.includes("travelling")}
                   onChange={handleHobbiesChange}
                 />
-                <label className="form-label" htmlFor="hb3">
+                <label className="form-label m-2" htmlFor="hb3">
                   Travelling
                 </label>
               </div>
               <div className="mb-3">
-                <label htmlFor="form-label">Contact No:</label>
+                <label className="form-label" htmlFor="cn">Contact No:</label>
                 <input
                   type="tel"
                   className="form-control"
@@ -163,7 +166,7 @@ const ProfileForm = () => {
               </div>
             </div>
             <div className="mb-3">
-              <label htmlFor="eml">Email Address:</label>
+              <label className="form-label" htmlFor="eml">Email Address:</label>
               <input
                 className="form-control"
                 type="email"
@@ -175,12 +178,12 @@ const ProfileForm = () => {
                 placeholder="abc.xyz@example.com"
               />
             </div>
-            <div className=" mt-3">
-              <button className="btn btn-outline-primary m-3" type="submit">
+            <div className="mt-3">
+              <button className="btn btn-primary m-3" type="submit">
                 Save
               </button>
               <button
-                className="btn btn-outline-danger m-3"
+                className="btn btn-danger m-3"
                 type="reset"
                 onClick={() => {
                   setProfile({
@@ -199,9 +202,9 @@ const ProfileForm = () => {
       )}
       {isSubmitted && (
         <div className="container">
-          <p>Full Name: {profile.fullName}</p>
-          <p>Age: {profile.age}</p>
-          <p>Gender: {profile.gender}</p>
+          <h2>Full Name: {profile.fullName}</h2>
+          <h2>Age: {profile.age}</h2>
+          <h2>Gender: {profile.gender}</h2>
           <h2>Hobbies :</h2>
           <ul>
             {profile.hobbies.map((hobby) => {
@@ -209,22 +212,22 @@ const ProfileForm = () => {
             })}
           </ul>
           <h2>Contact No : {profile.contactNo}</h2>
-          <h2>Email Address : {profile.emailAddress}</h2>
+          <h2>Email : {profile.emailAddress}</h2>
 
           <button
-            className="btn btn-outline-primary m-3"
+            className="btn btn-primary m-3"
             onClick={() => {
               setIsSubmitted(false);
               setProfile({
                 fullName: "",
                 age: "",
+                hobbies: [],
                 contactNo: "",
                 emailAddress: "",
-                hobbies: [],
               });
             }}
           >
-            back to form
+            Back to form
           </button>
         </div>
       )}
