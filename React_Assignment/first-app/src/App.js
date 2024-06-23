@@ -9,7 +9,8 @@
 // import Person from "./components/Person";
 // import SampleForm from "./components/SampleForm";
 // import Toolbar from "./components/Toolbar";
-import ProfileForm from "./components/ProfileForm";
+// import ProfileForm from "./components/ProfileForm";
+import ProfileFormRevision from "./components/ProfileFormRevision";
 
 function App() {
   // Parent component of Hello component
@@ -30,8 +31,8 @@ function App() {
       {/* <CarTable/> */}
       {/* <Count/> */}
       {/* <CountState/> */}
-      <ProfileForm/>
-
+      {/* <ProfileForm/> */}
+      <ProfileFormRevision/>
     </div>
   );
 } // End of parent component App

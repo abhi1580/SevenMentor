@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //react hook to keep track of component state
-const ProfileForm = () => {
+const ProfileFormRevision = () => {
   const [profile, setProfile] = useState({
     fullName: "",
     age: "",
@@ -43,14 +43,12 @@ const ProfileForm = () => {
   };
   return (
     <div className="container mt-5 w-50 border border-primary round p-3 text-bg-secondary">
-      <h2 style={{ textAlign: "center" }}>Profile Form</h2>
-      <hr />
       {!isSubmitted && (
         <div>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="fullname" className="form-label">
-                Full Name:
+                Full Name :
               </label>
               <input
                 className="form-control border border-dark"
@@ -62,7 +60,7 @@ const ProfileForm = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="age" className="form-label">
-                Age:
+                Age :
               </label>
               <input
                 className="form-control border border-dark"
@@ -77,7 +75,7 @@ const ProfileForm = () => {
             </div>
             <div className="mb-3">
               <label htmlFor="gender" className="form-label">
-                Gender:
+                Gender :
               </label>
               <div className="form-check">
                 <input
@@ -109,15 +107,15 @@ const ProfileForm = () => {
               </div>
             </div>
             <div className="mb-3">
-              <label className="form-label">Hobbies</label>
+              <label className="form-label">Hobbies :</label>
               <div className="form-check">
                 <input
                   className="form-check-label"
                   type="checkbox"
                   id="hb1"
                   name="hobbies"
-                  value="singing"
-                  checked={profile.hobbies.includes("singing")}
+                  value="Singing"
+                  checked={profile.hobbies.includes("Singing")}
                   onChange={handleHobbiesChange}
                 />
                 <label className="form-label m-2" htmlFor="hb1">
@@ -130,8 +128,8 @@ const ProfileForm = () => {
                   type="checkbox"
                   id="hb2"
                   name="hobbies"
-                  value="dancing"
-                  checked={profile.hobbies.includes("dancing")}
+                  value="Dancing"
+                  checked={profile.hobbies.includes("Dancing")}
                   onChange={handleHobbiesChange}
                 />
                 <label className="form-label m-2" htmlFor="hb2">
@@ -144,8 +142,8 @@ const ProfileForm = () => {
                   type="checkbox"
                   id="hb3"
                   name="hobbies"
-                  value="travelling"
-                  checked={profile.hobbies.includes("travelling")}
+                  value="Travelling"
+                  checked={profile.hobbies.includes("Travelling")}
                   onChange={handleHobbiesChange}
                 />
                 <label className="form-label m-2" htmlFor="hb3">
@@ -154,7 +152,7 @@ const ProfileForm = () => {
               </div>
               <div className="mb-3">
                 <label className="form-label" htmlFor="cn">
-                  Contact No:
+                  Contact No :
                 </label>
                 <input
                   type="tel"
@@ -171,7 +169,7 @@ const ProfileForm = () => {
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="eml">
-                Email Address:
+                Email Address :
               </label>
               <input
                 className="form-control"
@@ -186,7 +184,7 @@ const ProfileForm = () => {
             </div>
             <div className="mb-3 ">
               <label className="form-label" htmlFor="qu">
-                Educational Qualification:
+                Educational Qualification :
               </label>
               <select data-live-search="true"
                 required
@@ -265,4 +263,4 @@ const ProfileForm = () => {
   );
 };
 
-export default ProfileForm;
+export default ProfileFormRevision;
