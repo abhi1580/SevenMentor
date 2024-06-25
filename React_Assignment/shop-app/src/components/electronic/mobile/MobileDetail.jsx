@@ -4,9 +4,10 @@ import mobiles from "./mobile_data";
 const MobileDetail = () => {
   const { id } = useParams();
   const navigate=useNavigate()
-  const mobile = mobiles.find((m) => m.id == id);
+  const convertedId=parseInt(id)
+  const mobile = mobiles.find((m) => m.id === convertedId);
   return (
-    <div className="container p-5" key={mobile.id}>
+    <div className="container p-5" style={{textAlign:"center"}} key={mobile.id}>
       <h2>Mobile brand : {mobile.brand}</h2>
       <img
         src={mobile.image}

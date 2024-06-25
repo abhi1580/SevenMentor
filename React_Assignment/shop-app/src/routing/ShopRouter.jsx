@@ -11,6 +11,8 @@ import MobileGallery from "../components/electronic/mobile/MobileGallery";
 import MobileDetail from "../components/electronic/mobile/MobileDetail";
 import ClothsGallery from "../components/clothing/ClothsGallery";
 import ClothDetail from "../components/clothing/ClothDetail";
+import LaptopGallery from "../components/electronic/laptop/LaptopGallery";
+import LaptopDetail from "../components/electronic/laptop/LaptopDetail";
 
 const ShopRouter = () => {
   return (
@@ -23,10 +25,12 @@ const ShopRouter = () => {
               <Route path="" element={<MobileGallery />} />
               <Route path="detail/:id" element={<MobileDetail />} />
             </Route>
-            <Route path="laptop" element={<Laptop />} />
+            <Route path="laptop" element={<Laptop />}>
+              <Route path="" element={<LaptopGallery/>} />
+              <Route path="detail/:id" element={<LaptopDetail/>} />
+            </Route>
           </Route>
           <Route path="cloths" element={<Clothing />}>
-            <Route path="" element={<ClothsGallery />} />
             <Route path=":person" element={<ClothsGallery />} />
             <Route path=":person/detail/:id" element={<ClothDetail />} />
           </Route>

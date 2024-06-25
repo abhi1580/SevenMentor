@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const Laptop = () => {
-  return (
-    <div>Laptop Gallery</div>
-  )
-}
+  return <Outlet />;
+};
 
-export default Laptop
+export default Laptop;

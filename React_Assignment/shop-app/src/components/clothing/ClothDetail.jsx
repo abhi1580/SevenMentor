@@ -5,14 +5,15 @@ const ClothDetail = () => {
   const { id, person } = useParams();
   const navigate = useNavigate();
   console.log("Id:", id);
+  const convertedId=parseInt(id)
   console.log("person:", person);
   const filteredData = cloths.filter(
-    (fd) => fd.collection == person && fd.id == id
+    (fd) => fd.collection === person && fd.id === convertedId
   );
   console.log(filteredData);
-  const cloth = filteredData.find((c) => c.id == id);
+  const cloth = filteredData.find((c) => c.id === convertedId);
   return (
-    <div className="container p-5" key={cloth.id}>
+    <div className="container p-5" style={{textAlign:"center"}} key={cloth.convertedId}>
       <h2>Cloth brand : {cloth.brand}</h2>
       <img
         src={cloth.image}
