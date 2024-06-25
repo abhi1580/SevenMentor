@@ -2,13 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 const Mobile = () => {
-  return (
-    <div className="container-fluid">
-      <div className="row">
-        <Outlet />
-      </div>
-    </div>
-  );
+  return <Outlet />;
 };
 
 export default Mobile;
