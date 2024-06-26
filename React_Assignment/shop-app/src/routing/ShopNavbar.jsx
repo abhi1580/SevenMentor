@@ -21,6 +21,11 @@ const ShopNavbar = () => {
               Clothing
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/bikes">
+              Bike
+            </Link>
+          </li>
         </ul>
       </nav>
       <Outlet />
