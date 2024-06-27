@@ -14,6 +14,7 @@ import ClothDetail from "../components/clothing/ClothDetail";
 import LaptopGallery from "../components/electronic/laptop/LaptopGallery";
 import LaptopDetail from "../components/electronic/laptop/LaptopDetail";
 import BikeGallery from "../components/bikes/BikeGallery";
+import CarsGallery from "../components/cars/CarsGallery";
 
 const ShopRouter = () => {
   return (
@@ -36,6 +37,7 @@ const ShopRouter = () => {
             <Route path=":person/detail/:id" element={<ClothDetail />} />
           </Route>
           <Route path="bikes" element={<BikeGallery />} />
+          <Route path="cars" element={<CarsGallery/>} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
