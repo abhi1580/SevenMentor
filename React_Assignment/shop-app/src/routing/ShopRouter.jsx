@@ -15,6 +15,7 @@ import LaptopGallery from "../components/electronic/laptop/LaptopGallery";
 import LaptopDetail from "../components/electronic/laptop/LaptopDetail";
 import BikeGallery from "../components/bikes/BikeGallery";
 import CarsGallery from "../components/cars/CarsGallery";
+import StateShare from "../components/state_sharing/StateShare";
 
 const ShopRouter = () => {
   return (
@@ -38,6 +39,7 @@ const ShopRouter = () => {
           </Route>
           <Route path="bikes" element={<BikeGallery />} />
           <Route path="cars" element={<CarsGallery/>} />
+          <Route path="state_share" element={<StateShare/>} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

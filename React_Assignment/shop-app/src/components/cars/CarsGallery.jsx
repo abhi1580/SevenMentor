@@ -13,7 +13,7 @@ const CarsGallery = () => {
         Showing {index + 1} of {cars.length}
       </h2>
       <h3>
-        ******[{car.brand} {car.model}]******
+        ******[{car.brand}-{car.model}]******
       </h3>
       <div>
         <img src={car.image} alt={car.model} width={500} height={300} />

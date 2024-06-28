@@ -31,6 +31,11 @@ const ShopNavbar = () => {
               Cars
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/state_share">
+              State Sharing
+            </Link>
+          </li>
         </ul>
       </nav>
       <Outlet />
