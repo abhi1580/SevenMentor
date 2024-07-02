@@ -36,6 +36,11 @@ const ShopNavbar = () => {
               State Sharing
             </Link>
           </li>
+          <li>
+            <Link className="nav-link" to="/context">
+              Context Demo
+            </Link>
+          </li>
         </ul>
       </nav>
       <Outlet />

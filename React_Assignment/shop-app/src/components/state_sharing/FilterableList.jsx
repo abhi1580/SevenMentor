@@ -13,7 +13,7 @@ const FilterableList = () => {
   };
   //calling business logic function and obtaining result of business logic
   const searchResult = searchPlaces(places, searchQuery);
-  console.log(searchResult)
+  console.log(searchResult);
   return (
     <div>
       <SearchPlace

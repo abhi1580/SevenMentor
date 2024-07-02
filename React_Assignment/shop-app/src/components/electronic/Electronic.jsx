@@ -12,6 +12,8 @@ const Electronic = () => {
           </li>
           <li className="nav-item">
             <Link className="nav-link" to={"laptop"}>Laptop</Link>
+          </li><li className="nav-item">
+            <Link className="nav-link" to={"refrigerator"}>Refrigerator</Link>
           </li>
         </ul>
       </nav>

@@ -16,6 +16,10 @@ import LaptopDetail from "../components/electronic/laptop/LaptopDetail";
 import BikeGallery from "../components/bikes/BikeGallery";
 import CarsGallery from "../components/cars/CarsGallery";
 import StateShare from "../components/state_sharing/StateShare";
+import Refrigerator from "../components/electronic/refrigerator/Refrigerator";
+import RefrigeratorGallery from "../components/electronic/refrigerator/RefrigeratorGallery";
+import RefrigeratorDetail from "../components/electronic/refrigerator/RefrigeratorDetail";
+import ContextDemo from "../components/context/ContextDemo";
 
 const ShopRouter = () => {
   return (
@@ -32,6 +36,10 @@ const ShopRouter = () => {
               <Route path="" element={<LaptopGallery />} />
               <Route path="detail/:id" element={<LaptopDetail />} />
             </Route>
+            <Route path="refrigerator" element={<Refrigerator/>}>
+              <Route path="" element={<RefrigeratorGallery/>} />
+              <Route path="detail/:id" element={<RefrigeratorDetail/>} />
+            </Route>
           </Route>
           <Route path="cloths" element={<Clothing />}>
             <Route path=":person" element={<ClothsGallery />} />
@@ -40,6 +48,7 @@ const ShopRouter = () => {
           <Route path="bikes" element={<BikeGallery />} />
           <Route path="cars" element={<CarsGallery/>} />
           <Route path="state_share" element={<StateShare/>} />
+          <Route path="context" element={<ContextDemo/>} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
