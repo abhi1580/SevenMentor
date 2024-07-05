@@ -20,6 +20,7 @@ import Refrigerator from "../components/electronic/refrigerator/Refrigerator";
 import RefrigeratorGallery from "../components/electronic/refrigerator/RefrigeratorGallery";
 import RefrigeratorDetail from "../components/electronic/refrigerator/RefrigeratorDetail";
 import ContextDemo from "../components/context/ContextDemo";
+import RefDemo from "../components/ref/RefDemo";
 
 const ShopRouter = () => {
   return (
@@ -49,6 +50,7 @@ const ShopRouter = () => {
           <Route path="cars" element={<CarsGallery/>} />
           <Route path="state_share" element={<StateShare/>} />
           <Route path="context" element={<ContextDemo/>} />
+          <Route path="ref" element={<RefDemo/>} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

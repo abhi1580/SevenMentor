@@ -40,6 +40,10 @@ const ShopNavbar = () => {
             <Link className="nav-link" to="/context">
               Context Demo
             </Link>
+          </li><li>
+            <Link className="nav-link" to="/ref">
+              Ref Demo
+            </Link>
           </li>
         </ul>
       </nav>

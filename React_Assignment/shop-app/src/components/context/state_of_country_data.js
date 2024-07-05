@@ -22,12 +22,12 @@ const statesOfCountry = [
 
     {
         stateId: 5,
-        name: "Aomori",
+        name: "Hokkaido",
         countryId: 3,
     },
     {
         stateId: 6,
-        name: "Chiba",
+        name: "Chubu",
         countryId: 3,
     },
 ];

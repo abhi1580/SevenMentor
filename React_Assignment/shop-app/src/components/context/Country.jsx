@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import countries from "./country_data";
 import StateOfCountry from "./StateOfCountry";
 
+//globally create context object and export it
+export const CountryContext = createContext();
+
 const Country = () => {
-  const [countryId, setCountryId] = useState(1);
+  const [countryName, setCountryName] = useState("");
   return (
     <div>
       <div>
@@ -12,17 +15,19 @@ const Country = () => {
         </label>
         <select
           className="form-select"
-          value={countryId}
-          onChange={(e) => setCountryId(e.target.value)}
+          value={countryName}
+          onChange={(e) => setCountryName(e.target.value)}
         >
           {countries.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name}                  
+            <option key={c.id} value={c.name}>
+              {c.name}
             </option>
           ))}
         </select>
       </div>
-      <StateOfCountry countryId={countryId} />
+      <CountryContext.Provider value={countryName}>
+        <StateOfCountry />
+      </CountryContext.Provider>
     </div>
   );
 };
