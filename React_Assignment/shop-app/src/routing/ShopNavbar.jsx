@@ -50,6 +50,10 @@ const ShopNavbar = () => {
             <Link className="nav-link" to="/red">
               Reducer Demo
             </Link>
+          </li><li>
+            <Link className="nav-link" to="/effect">
+              Effect Demo
+            </Link>
           </li>
         </ul>
       </nav>

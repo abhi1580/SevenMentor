@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Laptop", "brand": "HP", "price": 74000.0 },
+  { "id": 2, "name": "Mobile", "brand": "One Plus", "price": 26000.0 },
+  { "id": 3, "name": "Music System", "brand": "JBL", "price": 14999.0 },
+  { "id": 4, "name": "TV", "brand": "Samsung", "price": 50000.0 }
+]

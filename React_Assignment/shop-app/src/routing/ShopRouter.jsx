@@ -22,6 +22,7 @@ import RefrigeratorDetail from "../components/electronic/refrigerator/Refrigerat
 import ContextDemo from "../components/context/ContextDemo";
 import RefDemo from "../components/ref/RefDemo";
 import ReducerDemo from "../components/reducer/ReducerDemo";
+import EffectDemo from "../components/effect/EffectDemo";
 
 const ShopRouter = () => {
   return (
@@ -53,6 +54,7 @@ const ShopRouter = () => {
           <Route path="context" element={<ContextDemo/>} />
           <Route path="ref" element={<RefDemo/>} />
           <Route path="red" element={<ReducerDemo/>} />
+          <Route path="effect" element={<EffectDemo/>} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
