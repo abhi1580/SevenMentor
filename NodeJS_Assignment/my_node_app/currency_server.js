@@ -90,7 +90,7 @@ const server = http.createServer(function (req, res) {
     <body>
         <div class="container">
             <h1>Currency Converter</h1>
-            <h2>₹1 equals:</h2>
+            <h2>₹${inrValue} equals:</h2>
             <table>
                 <tr>
                     <th>Currency</th>
