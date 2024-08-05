@@ -10,7 +10,7 @@ const server = http.createServer(function (req, res) {
     const q = url.parse(req.url, true).query;
 
     //retrieve query string from request url
-    const data = `\nName: ${q.name} Surname: ${q.surname} Email: ${q.email} `;
+    const data = `Name: ${q.name} Surname: ${q.surname} Email: ${q.email} \n`;
     fs.appendFile("../files/PersonDataAppended.doc", data, (err) => {
       if (err) throw err;
       console.log("Person added into the file");
