@@ -1,0 +1,1 @@
+This is demo file for reading the text from a read file server.
