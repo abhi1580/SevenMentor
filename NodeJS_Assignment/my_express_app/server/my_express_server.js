@@ -6,12 +6,10 @@ const app = express();
 
 //request processing logic
 
-
-app.get('/hello',(req,res)=>{
-    //sending response to the client
-    res.send({name:"Abhay",surname:"Panchal"}
-    )
-})
+app.get("/hello", (req, res) => {
+  //sending response to the client
+  res.send({ name: "Abhay", surname: "Panchal" });
+});
 
 //configure express server to listen on some port
 
