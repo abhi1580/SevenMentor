@@ -1,4 +1,4 @@
-//Business logiv
+//Business logic
 function calculateSimpleInterest(principal, duration, rate) {
   const interestAmount = (principal * duration * rate) / 100;
   return interestAmount;
