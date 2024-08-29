@@ -15,7 +15,7 @@ router.use(function(req,res,next){
 //route handler
 
 router.get("/welcome",(req,res,next)=>{
-    res.send("Welcome from the route handler after pre processing request bu middleware")
+    res.send("Welcome from the route handler after pre processing request by middleware")
     next()
 })
 

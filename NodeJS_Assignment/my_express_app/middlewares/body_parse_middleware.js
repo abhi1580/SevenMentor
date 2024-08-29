@@ -17,8 +17,8 @@ webApp.post("/user", (req, res) => {
   const clientUserName = req.body.username;
   const clientPassword = req.body.password;
 
-  console.log(req);
-  console.log(req.body);
+  // console.log(req);
+  // console.log(req.body);
 
   res.status(200).send(`Dear ${clientUserName} ,Welcome`);
 
