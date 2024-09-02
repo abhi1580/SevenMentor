@@ -1,0 +1,22 @@
+.header {
+  background-color: aqua;
+  color: blue;
+}
+
+#pid {
+  background-color: pink;
+  color: deeppink;
+}
+.container{
+    background-color: #fff;
+    color: blue;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+}
+
+.form-group{
+    margin-bottom: 10px;
+    
+}
