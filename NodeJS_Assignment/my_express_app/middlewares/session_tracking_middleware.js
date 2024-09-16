@@ -19,6 +19,7 @@ app.get("/hello", (req, res) => {
 
     req.session.pageViews++;
     console.log(`Session ID : ${req.session.id}`);
+    console.log(`Session ID : ${req.session.secret}`);
 
     res.send(`You visited this page ${req.session.pageViews} times.`);
   } else {
