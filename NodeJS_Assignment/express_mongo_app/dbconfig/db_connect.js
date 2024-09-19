@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-function connectTOMongoDB() {
+function connectToMongoDB() {
   //read environment variable from .env file
   //and load them in process.env object
   dotenv.config();
@@ -12,4 +12,4 @@ function connectTOMongoDB() {
     .catch((err) => console.log(err));
 }
 //export function
-module.exports = connectTOMongoDB;
+module.exports = connectToMongoDB;

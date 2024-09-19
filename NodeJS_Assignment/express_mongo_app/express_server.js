@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const connectTOMongoDB = require("./dbconfig/db_connect");
+const connectToMongoDB = require("./dbconfig/db_connect");
 const Person = require("./models/Person");
 const app = express();
 
-connectTOMongoDB();
+connectToMongoDB();
 //database operations
 //insert new person document
 // const person = new Person({
@@ -40,12 +40,32 @@ connectTOMongoDB();
 //   .catch((err) => console.log(err));
 
 //find all the person documents
-Person.find({ name: "Abhay Rameshrao Panchal" })
+// Person.find()
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => console.log(err));
+
+//find data based on condition
+// Person.find({ age: { $gt: 20 } })
+// Person.find({ name: { $eq: "Hritik Roshan" } })
+// Person.find({ gender: "Male" })
+/* Person.find({ gender: { $eq: "Female" } })
   .then((data) => {
     console.log(data);
   })
-  .then((err) => console.log(err));
+  .catch((err) => console.error(err)); */
 
+//Updating the documnet as per the criteria
+// Person.updateOne({ age: 0 }, { $set: { age: 27 } })
+//   .then((result) => console.log(result))
+//   .catch((err) => console.error(err));
+
+//Delete the document as per criteria
+
+Person.deleteOne({ name: "Hritik Roshan" })
+  .then((result) => console.log(result))
+  .catch((err) => console.error(err));
 app.listen(process.env.PORT, () => {
   console.log("Express app server started on port no. " + process.env.PORT);
 });
