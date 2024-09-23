@@ -1,10 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const Product = require("../models/product_model");
 
 const productRouter = express.Router();
 
+productRouter.options("/all", cors());
+
 //get all the products
-productRouter.get("/all", async (req, res) => {
+productRouter.get("/all", cors(), async (req, res) => {
   const products = await Product.find();
   res.status(200).send(products);
   //   res.status(200).json(products);
@@ -51,8 +54,8 @@ productRouter.delete("/delete-product", express.json(), async (req, res) => {
     price: price,
   });
   res.status(200).json({
-    message:`Product ${brand} ${name} is deleted successfully`
-  })
+    message: `Product ${brand} ${name} is deleted successfully`,
+  });
 });
 
 module.exports = productRouter;
