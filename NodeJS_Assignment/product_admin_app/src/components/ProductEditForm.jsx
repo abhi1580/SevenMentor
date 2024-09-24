@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   Form,
   FormGroup,
@@ -19,6 +19,7 @@ const ProductEditForm = () => {
     price: price,
   });
   const [serverResponse, setServerResponse] = useState("");
+  const navigate = useNavigate();
   //local method of component to update the product
   function updateProduct(product) {
     fetch(PRODUCT_API_URL + `/edit-product`, {
@@ -46,6 +47,8 @@ const ProductEditForm = () => {
       .then((responseData) => {
         setServerResponse(responseData);
         alert(responseData.message);
+        // Navigate back to ProductView on success
+        navigate("/"); // Replace with your ProductView path if different
       })
       .catch((err) => console.error(err));
   }

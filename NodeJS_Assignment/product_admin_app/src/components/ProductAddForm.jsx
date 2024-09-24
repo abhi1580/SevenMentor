@@ -6,6 +6,7 @@ import {
   FormControl,
   FormGroup,
 } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { PRODUCT_API_URL } from "../App";
 
 const ProductAddForm = () => {
@@ -15,6 +16,8 @@ const ProductAddForm = () => {
     model: "",
     price: "",
   });
+
+  const navigate = useNavigate();
 
   const addNewProduct = (product) => {
     fetch(PRODUCT_API_URL + "/add", {
@@ -39,7 +42,10 @@ const ProductAddForm = () => {
           throw Error(`Server error ${response.status}`);
         }
       })
-      .then((responseData) => alert(responseData.message))
+      .then((responseData) => {
+        alert(responseData.message);
+        navigate("/");
+      })
       .catch((err) => console.error(err));
   };
   //event handler for form submit

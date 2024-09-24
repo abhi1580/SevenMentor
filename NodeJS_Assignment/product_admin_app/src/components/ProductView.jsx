@@ -38,34 +38,38 @@ const ProductView = () => {
 
   // Handle product delete
   const handleDelete = (product) => {
-    fetch(PRODUCT_API_URL + "/delete-product", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name: product.name,
-        brand: product.brand,
-        model: product.model,
-        price: product.price,
-      }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else if (response.status === "404") {
-          return response.json();
-        } else {
-          throw Error(`Server error ${response.status}`);
-        }
+    const result = window.confirm(
+      `Do you want to delete ${product.brand} ${product.name}?`
+    );
+    if (result)
+      fetch(PRODUCT_API_URL + "/delete-product", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: product.name,
+          brand: product.brand,
+          model: product.model,
+          price: product.price,
+        }),
       })
-      .then((responseData) => {
-        // Update products state after successful deletion
-        setProducts(products.filter((p) => p._id !== product._id)); // Filter out deleted product
-        alert(responseData.message);
-      })
-      .catch((err) => console.error(err));
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else if (response.status === "404") {
+            return response.json();
+          } else {
+            throw Error(`Server error ${response.status}`);
+          }
+        })
+        .then((responseData) => {
+          // Update products state after successful deletion
+          setProducts(products.filter((p) => p._id !== product._id)); // Filter out deleted product
+          alert(responseData.message);
+        })
+        .catch((err) => console.error(err));
   };
 
   return (
@@ -90,7 +94,7 @@ const ProductView = () => {
               <td>
                 <button
                   title="edit"
-                  className="btn btn-warning"
+                  className="btn btn-warning me-3"
                   onClick={() => handleEdit(p)}
                 >
                   <FaRegEdit />
