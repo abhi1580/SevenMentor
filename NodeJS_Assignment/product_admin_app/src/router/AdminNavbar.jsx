@@ -14,6 +14,11 @@ const AdminNavbar = () => {
               Home
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link active" to="/add">
+              Add New Product
+            </Link>
+          </li>
         </ul>
       </nav>
       <Outlet />

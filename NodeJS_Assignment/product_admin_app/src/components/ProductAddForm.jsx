@@ -1,28 +1,24 @@
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 import {
-  Form,
-  FormGroup,
-  FormControl,
   Button,
-  FormLabel,
   Container,
+  Form,
+  FormControl,
+  FormGroup,
 } from "react-bootstrap";
-import { useState } from "react";
 import { PRODUCT_API_URL } from "../App";
 
-const ProductEditForm = () => {
-  const { name, brand, model, price } = useParams();
+const ProductAddForm = () => {
   const [product, setProduct] = useState({
-    name: name,
-    brand: brand,
-    model: model,
-    price: price,
+    name: "",
+    brand: "",
+    model: "",
+    price: "",
   });
-  const [serverResponse, setServerResponse] = useState("");
-  //local method of component to update the product
-  function updateProduct(product) {
-    fetch(PRODUCT_API_URL + `/edit-product`, {
-      method: "PUT",
+
+  const addNewProduct = (product) => {
+    fetch(PRODUCT_API_URL + "/add", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -40,68 +36,71 @@ const ProductEditForm = () => {
         } else if (response.status === "404") {
           return response.json();
         } else {
-          throw Error(`Server error: ${response.status}`);
+          throw Error(`Server error ${response.status}`);
         }
       })
-      .then((responseData) => {
-        setServerResponse(responseData);
-        alert(responseData.message);
-      })
+      .then((responseData) => alert(responseData.message))
       .catch((err) => console.error(err));
-  }
-
+  };
+  //event handler for form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateProduct(product);
+    addNewProduct(product);
   };
   return (
-    <Container>
-      <h2 className="text-center">Product Edit Form</h2>
+    <Container className="border rounded mt-3 p-3 w-50">
+      <h2 className="text-center">Product Add Form </h2>
       <Form onSubmit={handleSubmit}>
         <FormGroup className="mb-3">
-          <FormLabel>Product Name</FormLabel>
           <FormControl
-            type="text"
+            required
+            placeholder="Enter product name"
             value={product.name}
             onChange={(e) => setProduct({ ...product, name: e.target.value })}
-            readOnly
           />
-        </FormGroup>
+        </FormGroup>{" "}
         <FormGroup className="mb-3">
-          <FormLabel>Brand</FormLabel>
           <FormControl
-            type="text"
+            required
+            placeholder="Enter product brand"
             value={product.brand}
             onChange={(e) => setProduct({ ...product, brand: e.target.value })}
-            readOnly
           />
         </FormGroup>
         <FormGroup className="mb-3">
-          <FormLabel>Model</FormLabel>
           <FormControl
-            type="text"
+            required
+            placeholder="Enter product model"
             value={product.model}
             onChange={(e) => setProduct({ ...product, model: e.target.value })}
-            readOnly
           />
         </FormGroup>
         <FormGroup className="mb-3">
-          <FormLabel>Price</FormLabel>
           <FormControl
-            type="text"
-            value={product.price}
             required
+            type="number"
+            placeholder="Enter product price"
+            value={product.price}
             onChange={(e) => setProduct({ ...product, price: e.target.value })}
           />
         </FormGroup>
-        <Button type="submit" variant="success">
-          {" "}
-          Update
-        </Button>
+        <FormGroup className="text-center">
+          <Button className="me-3" type="submit">
+            Save
+          </Button>
+          <Button
+            type="reset"
+            variant="secondary"
+            onClick={() => {
+              setProduct({ name: "", brand: "", model: "", price: "" });
+            }}
+          >
+            Reset
+          </Button>
+        </FormGroup>
       </Form>
-      {/* <h2>{serverResponse}</h2> */}
     </Container>
   );
 };
 
-export default ProductEditForm;
+export default ProductAddForm;

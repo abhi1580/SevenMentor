@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { FaTrashCan } from "react-icons/fa6";
 import { FaRegEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
-const PRODUCT_API_URL = "http://localhost:4000/api/products";
+import { PRODUCT_API_URL } from "../App";
 
 const ProductView = () => {
   const [products, setProducts] = useState([]);
@@ -39,19 +38,32 @@ const ProductView = () => {
 
   // Handle product delete
   const handleDelete = (product) => {
-    fetch(`${PRODUCT_API_URL}/delete/${product._id}`, {
+    fetch(PRODUCT_API_URL + "/delete-product", {
       method: "DELETE",
       headers: {
+        "Content-Type": "application/json",
         Accept: "application/json",
       },
+      body: JSON.stringify({
+        name: product.name,
+        brand: product.brand,
+        model: product.model,
+        price: product.price,
+      }),
     })
-      .then((res) => {
-        if (res.ok) {
-          // After deletion, remove the product from the state
-          setProducts(products.filter((p) => p._id !== product._id));
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else if (response.status === "404") {
+          return response.json();
         } else {
-          throw new Error(`Failed to delete product ${product.name}`);
+          throw Error(`Server error ${response.status}`);
         }
+      })
+      .then((responseData) => {
+        // Update products state after successful deletion
+        setProducts(products.filter((p) => p._id !== product._id)); // Filter out deleted product
+        alert(responseData.message);
       })
       .catch((err) => console.error(err));
   };
@@ -77,12 +89,14 @@ const ProductView = () => {
               <td>{p.price}</td>
               <td>
                 <button
+                  title="edit"
                   className="btn btn-warning"
                   onClick={() => handleEdit(p)}
                 >
                   <FaRegEdit />
                 </button>
                 <button
+                  title="delete"
                   className="btn btn-danger"
                   onClick={() => handleDelete(p)}
                 >

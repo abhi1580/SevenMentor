@@ -5,6 +5,9 @@ const Product = require("../models/product_model");
 const productRouter = express.Router();
 
 productRouter.options("/all", cors());
+productRouter.options("/add", cors());
+productRouter.options("/edit-product", cors());
+productRouter.options("/delete-product", cors());
 
 //get all the products
 productRouter.get("/all", cors(), async (req, res) => {
@@ -14,7 +17,7 @@ productRouter.get("/all", cors(), async (req, res) => {
 });
 
 //create new product document in the collection
-productRouter.post("/add", express.json(), async (req, res) => {
+productRouter.post("/add", cors(), express.json(), async (req, res) => {
   const { name, brand, model, price } = req.body;
 
   const product = new Product({
@@ -32,7 +35,7 @@ productRouter.post("/add", express.json(), async (req, res) => {
 });
 
 //update the product price
-productRouter.put("/update/product", express.json(), async (req, res) => {
+productRouter.put("/edit-product", cors(), express.json(), async (req, res) => {
   const { name, brand, model, price } = req.body;
 
   await Product.updateOne(
@@ -45,17 +48,22 @@ productRouter.put("/update/product", express.json(), async (req, res) => {
 });
 
 //delete the product
-productRouter.delete("/delete-product", express.json(), async (req, res) => {
-  const { name, brand, model, price } = req.body;
-  await Product.deleteOne({
-    name: name,
-    brand: brand,
-    model: model,
-    price: price,
-  });
-  res.status(200).json({
-    message: `Product ${brand} ${name} is deleted successfully`,
-  });
-});
+productRouter.delete(
+  "/delete-product",
+  cors(),
+  express.json(),
+  async (req, res) => {
+    const { name, brand, model, price } = req.body;
+    await Product.deleteOne({
+      name: name,
+      brand: brand,
+      model: model,
+      price: price,
+    });
+    res.status(200).json({
+      message: `Product ${brand} ${name} is deleted successfully`,
+    });
+  }
+);
 
 module.exports = productRouter;

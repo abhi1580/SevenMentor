@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdminNavbar from "./AdminNavbar";
 import ProductView from "../components/ProductView";
 import ProductEditForm from "../components/ProductEditForm";
+import ProductAddForm from "../components/ProductAddForm";
 
 const AdminRouter = () => {
   return (
@@ -10,6 +11,7 @@ const AdminRouter = () => {
       <Routes>
         <Route path="/" element={<AdminNavbar />}>
           <Route index element={<ProductView />} />
+          <Route path="add" element={<ProductAddForm />} />
           <Route
             path="edit-product/:name/:brand/:model/:price"
             element={<ProductEditForm />}
