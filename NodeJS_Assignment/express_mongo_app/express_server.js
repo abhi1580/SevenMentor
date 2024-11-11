@@ -66,6 +66,7 @@ connectToMongoDB();
 Person.deleteOne({ name: "Hritik Roshan" })
   .then((result) => console.log(result))
   .catch((err) => console.error(err));
+
 app.listen(process.env.PORT, () => {
   console.log("Express app server started on port no. " + process.env.PORT);
 });

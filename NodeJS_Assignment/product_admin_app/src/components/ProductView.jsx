@@ -66,7 +66,7 @@ const ProductView = () => {
         })
         .then((responseData) => {
           // Update products state after successful deletion
-          setProducts(products.filter((p) => p._id !== product._id)); // Filter out deleted product
+          setProducts(products.filter((p) => p._id !== product._id)); // Filter out deleted product(remove deleted product having product._id)
           alert(responseData.message);
         })
         .catch((err) => console.error(err));

@@ -1,112 +1,127 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Container,
-  Form,
-  FormControl,
-  FormGroup,
-} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { PRODUCT_API_URL } from "../App";
+import {
+  Container,
+  Card,
+  CardContent,
+  Typography,
+  TextField,
+  Button,
+  Link,
+  Box,
+} from "@mui/material";
 
-const ProductAddForm = () => {
-  const [product, setProduct] = useState({
+const Signup = () => {
+  const [formData, setFormData] = useState({
     name: "",
-    brand: "",
-    model: "",
-    price: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const navigate = useNavigate();
 
-  const addNewProduct = (product) => {
-    fetch(PRODUCT_API_URL + "/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name: product.name,
-        brand: product.brand,
-        model: product.model,
-        price: product.price,
-      }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else if (response.status === "404") {
-          return response.json();
-        } else {
-          throw Error(`Server error ${response.status}`);
-        }
-      })
-      .then((responseData) => {
-        alert(responseData.message);
-        navigate("/");
-      })
-      .catch((err) => console.error(err));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
-  //event handler for form submit
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    addNewProduct(product);
+    const { password, confirmPassword } = formData;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // Simulate signup logic
+    alert("Signup successful!");
+    navigate("/login"); // Redirect to login page after successful signup
   };
+
   return (
-    <Container className="border rounded mt-3 p-3 w-50">
-      <h2 className="text-center">Product Add Form </h2>
-      <Form onSubmit={handleSubmit}>
-        <FormGroup className="mb-3">
-          <FormControl
-            required
-            placeholder="Enter product name"
-            value={product.name}
-            onChange={(e) => setProduct({ ...product, name: e.target.value })}
-          />
-        </FormGroup>{" "}
-        <FormGroup className="mb-3">
-          <FormControl
-            required
-            placeholder="Enter product brand"
-            value={product.brand}
-            onChange={(e) => setProduct({ ...product, brand: e.target.value })}
-          />
-        </FormGroup>
-        <FormGroup className="mb-3">
-          <FormControl
-            required
-            placeholder="Enter product model"
-            value={product.model}
-            onChange={(e) => setProduct({ ...product, model: e.target.value })}
-          />
-        </FormGroup>
-        <FormGroup className="mb-3">
-          <FormControl
-            required
-            type="number"
-            placeholder="Enter product price"
-            value={product.price}
-            onChange={(e) => setProduct({ ...product, price: e.target.value })}
-          />
-        </FormGroup>
-        <FormGroup className="text-center">
-          <Button className="me-3" type="submit">
-            Save
-          </Button>
-          <Button
-            type="reset"
-            variant="secondary"
-            onClick={() => {
-              setProduct({ name: "", brand: "", model: "", price: "" });
-            }}
-          >
-            Reset
-          </Button>
-        </FormGroup>
-      </Form>
+    <Container
+      maxWidth="xs"
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+      }}
+    >
+      <Card sx={{ width: "100%", boxShadow: 3 }}>
+        <CardContent>
+          <Typography variant="h4" component="h1" align="center" gutterBottom>
+            Sign Up
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <Box mb={3}>
+              <TextField
+                label="Full Name"
+                variant="outlined"
+                fullWidth
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </Box>
+            <Box mb={3}>
+              <TextField
+                label="Email Address"
+                variant="outlined"
+                fullWidth
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Box>
+            <Box mb={3}>
+              <TextField
+                label="Password"
+                variant="outlined"
+                fullWidth
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </Box>
+            <Box mb={3}>
+              <TextField
+                label="Confirm Password"
+                variant="outlined"
+                fullWidth
+                type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+            </Box>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ mb: 2 }}
+            >
+              Sign Up
+            </Button>
+            <Box textAlign="center">
+              <Link href="/login" variant="body2">
+                Already have an account? Login
+              </Link>
+            </Box>
+          </form>
+        </CardContent>
+      </Card>
     </Container>
   );
 };
 
-export default ProductAddForm;
+export default Signup;
