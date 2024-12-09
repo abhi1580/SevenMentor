@@ -38,7 +38,7 @@ function verifyJWTToken(req, res, next) {
           });
         } else {
           req.data = payload;
-          next(); //calling next intended middleware or intended request hnadler
+          next(); //calling next intended middleware or intended request handler
         }
       });
     } else {
